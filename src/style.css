@@ -1,0 +1,17 @@
+.menu-bar-style {
+    -fx-background-color: #a0522d; /* brown */
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: #cccccc;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #a0522d;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+}
