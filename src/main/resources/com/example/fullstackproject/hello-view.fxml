@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.fullstackproject.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.fullstackproject.HelloController">
 
-    <Label fx:id="welcomeText" text="Welcome to JavaFX!"/>
-    <Button text="Say Hello" onAction="#onHelloButtonClick"/>
-</VBox>
+    <!-- Left: Image Placeholder -->
+    <left>
+        <VBox alignment="CENTER" spacing="10" padding="10">
+            <ImageView fitHeight="100" fitWidth="100">
+                <image>
+                    <!-- Optional: default image URL -->
+                </image>
+            </ImageView>
+        </VBox>
+    </left>
+
+    <!-- Center: TableView -->
+    <center>
+        <TableView fx:id="studentTable" prefHeight="400" prefWidth="600">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="firstNameColumn" text="First Name" prefWidth="100"/>
+                <TableColumn fx:id="lastNameColumn" text="Last Name" prefWidth="100"/>
+                <TableColumn fx:id="departmentColumn" text="Department" prefWidth="100"/>
+                <TableColumn fx:id="majorColumn" text="Major" prefWidth="100"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Right: Form Inputs and Buttons -->
+    <right>
+        <VBox spacing="10" padding="10" style="-fx-background-color: #99ff66;">
+            <TextField fx:id="firstNameField" promptText="First Name"/>
+            <TextField fx:id="lastNameField" promptText="Last Name"/>
+            <TextField fx:id="departmentField" promptText="Department"/>
+            <TextField fx:id="majorField" promptText="Major"/>
+            <TextField fx:id="emailField" promptText="Email"/>
+            <TextField fx:id="imageUrlField" promptText="imageURL"/>
+
+            <Button text="Clear" onAction="#handleClear"/>
+            <Button text="Add" onAction="#handleAdd"/>
+            <Button text="Delete" onAction="#handleDelete"/>
+            <Button text="Edit" onAction="#handleEdit"/>
+        </VBox>
+    </right>
+</BorderPane>
 
